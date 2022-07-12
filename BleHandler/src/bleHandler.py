@@ -25,7 +25,7 @@ class BLE():
         self.dev_name = dev_name
         self.stay_in_while = True
         self.client = BleakClient("")
-        asyncio.run(self.main_())
+        
 
     def c_print(self, text: str, color: bcolors) -> None:
         print(f"{color}{text}{bcolors.ENDC}\n")
