@@ -9,6 +9,7 @@ py_library(
     visibility = ["//visibility:public"],
     deps = [
         requirement("bleak"),
+        requirement("flake8"),
         ],
 )
 
@@ -35,5 +36,6 @@ flake_test(
     srcs = glob(["src/bleHandler.py",],),
     deps = [
         ":ble_handler",
+        requirement("flake8"),
     ],
 )
