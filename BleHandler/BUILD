@@ -1,6 +1,6 @@
 load("@rules_python//python:defs.bzl", "py_library")
 load("@pip//:requirements.bzl", "requirement")
-load("//python_BLE_bleak/tools/flake:defs.bzl", "flake_test")
+load("//tools/flake:defs.bzl", "flake_test")
 
 py_library(
     name = "ble_handler",
@@ -21,14 +21,14 @@ py_binary(
     imports = ["."]
 )
 
-py_test(
-    name = "test_ble_handler",
-    srcs = glob(["tests/*.py"]),
-    main = "test_ble_handler.py",
-    deps = [
-        ":ble_handler",
-    ],
-)
+# py_test(
+#     name = "test_ble_handler",
+#     srcs = glob(["tests/*.py"]),
+#     main = "test_ble_handler.py",
+#     deps = [
+#         ":ble_handler",
+#     ],
+# )
 
 flake_test(
     name = "test",
