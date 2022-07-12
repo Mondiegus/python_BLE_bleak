@@ -32,7 +32,7 @@ py_test(
 
 flake_test(
     name = "test",
-    srcs = glob(["*.py"]),
+    srcs = glob(["src/bleHandler.py",],),
     deps = [
         ":ble_handler",
     ],

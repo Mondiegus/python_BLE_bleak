@@ -1,9 +1,9 @@
 
+import ast
 from bleak import BleakScanner, BleakClient
 import asyncio
 import signal
 import sys
-import os
 dependencies = ['asyncio', 'bleak']
 
 
@@ -25,7 +25,6 @@ class BLE():
         self.dev_name = dev_name
         self.stay_in_while = True
         self.client = BleakClient("")
-        
 
     def c_print(self, text: str, color: bcolors) -> None:
         print(f"{color}{text}{bcolors.ENDC}\n")
@@ -40,7 +39,7 @@ class BLE():
         self.name = name
 
     async def start_notify(self, characteristic: str, function) -> None:
-        await self.client.start_notify(characteristic, eval(function)())
+        await self.client.start_notify(characteristic, ast.literal_eval(function)())
 
     async def stop_notify(self, characteristic: str) -> None:
         await self.client.stop_notify(characteristic)

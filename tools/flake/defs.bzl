@@ -10,9 +10,9 @@ def flake_test(name, srcs, deps = [], args = [], data = [], **kwargs):
     py_test(
         name = name,
         srcs = [
-            "//tools/flake:flake_wrapper.py",
+            "//python_BLE_bleak/tools/flake:flake_wrapper.py",
         ] + srcs,
-        main = "//tools/flake:flake_wrapper.py",
+        main = "//python_BLE_bleak/tools/flake:flake_wrapper.py",
         args = [
             "--ignore=E501,S104,S605,F541,W503,S404,S607,S603",
         ],
